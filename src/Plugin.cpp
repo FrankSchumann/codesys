@@ -7,13 +7,13 @@
 
 extern "C" void subscribePlugin()
 {
-    std::cout << "Runtime - subscribePlugin2" << std::endl;
+    std::cout << "Codesys - subscribePlugin" << std::endl;
 
     std::shared_ptr< COPA::FactoryController > factoryController = std::make_shared< COPA::FactoryController >();
 
-    std::shared_ptr< COPA::FactoryIf > runtimeFactory = std::make_shared< CodesysFactory >();
+    std::shared_ptr< COPA::FactoryIf > codesysFactory = std::make_shared< CodesysFactory >();
 
-    factoryController->subscribe( runtimeFactory );
+    factoryController->subscribe( codesysFactory );
 
 }
 
