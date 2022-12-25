@@ -2,15 +2,7 @@
 
 #include <iostream>
 
-#include "copa-pdk/component/ComponentController.h"
-
 CodesysAdapter::CodesysAdapter( std::string const &_type, std::string const &_name )
-    : CodesysAdapter( _type, _name, std::make_shared< COPA::ComponentController >() )
-{
-}
-
-CodesysAdapter::CodesysAdapter( std::string const &_type, std::string const &_name, std::shared_ptr< COPA::ComponentControllerIf > _componentController )
-    : type( _type ), name( _name ), componentController( _componentController )
 {
 }
 
