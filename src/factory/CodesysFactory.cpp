@@ -19,7 +19,7 @@ CodesysFactory::~CodesysFactory()
 {
 }
 
-std::shared_ptr< COPA::ComponentIf > CodesysFactory::create( std::string const &name )
+std::shared_ptr< COPA::ComponentIf > CodesysFactory::create( std::string const &name ) const
 {
     std::cout << "CodesysFactory::create" << std::endl;
 
@@ -33,7 +33,7 @@ std::shared_ptr< COPA::ComponentIf > CodesysFactory::create( std::string const &
     return codesysAdapter;
 }
 
-std::string CodesysFactory::getType()
+std::string CodesysFactory::getType() const
 {
     return type;
 }
