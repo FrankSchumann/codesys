@@ -10,31 +10,31 @@ CodesysAdapter::~CodesysAdapter()
 {
 }
 
-void CodesysAdapter::startApplications()
+void CodesysAdapter::startApplications() const
 {
 	std::cout << "CodesysAdapter::startApplications" << " type: " << type << " name: " << name << std::endl;
 }
 
-void CodesysAdapter::stopApplications()
+void CodesysAdapter::stopApplications() const
 {
 }
 
-std::string CodesysAdapter::getRuntimeVersion()
+std::string CodesysAdapter::getRuntimeVersion() const
 {
     return std::string( "3.5.18.0" );
 }
 
-std::string CodesysAdapter::getType()
+std::string CodesysAdapter::getType() const
 {
     return type;
 }
 
-std::string CodesysAdapter::getName()
+std::string CodesysAdapter::getName() const
 {
     return name;
 }
 
-std::string CodesysAdapter::getVersion()
+std::string CodesysAdapter::getVersion() const
 {
     return std::string( "0.0.0.1" );
 }

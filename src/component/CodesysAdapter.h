@@ -11,13 +11,13 @@ class CodesysAdapter : public RuntimeIf
     CodesysAdapter( std::string const &_type, std::string const &_name );
     ~CodesysAdapter();
 
-    virtual void startApplications() override;
-    virtual void stopApplications() override;
-    virtual std::string getRuntimeVersion() override;
+    virtual void startApplications() const override;
+    virtual void stopApplications() const override;
+    virtual std::string getRuntimeVersion() const override;
 
-    virtual std::string getType() override;
-    virtual std::string getName() override;
-    virtual std::string getVersion() override;
+    virtual std::string getType() const override;
+    virtual std::string getName() const override;
+    virtual std::string getVersion() const override;
 
    private:
     std::string type;
