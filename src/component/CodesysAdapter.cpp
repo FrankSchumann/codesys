@@ -1,5 +1,7 @@
 #include "CodesysAdapter.h"
 
+#include <iostream>
+
 #include "copa-pdk/component/ComponentController.h"
 
 CodesysAdapter::CodesysAdapter( std::string const &_type, std::string const &_name )
@@ -18,6 +20,7 @@ CodesysAdapter::~CodesysAdapter()
 
 void CodesysAdapter::startApplications()
 {
+	std::cout << "CodesysAdapter::startApplications" << " type: " << type << " name: " << name << std::endl;
 }
 
 void CodesysAdapter::stopApplications()
