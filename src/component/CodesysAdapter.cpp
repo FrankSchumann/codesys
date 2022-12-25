@@ -12,11 +12,14 @@ CodesysAdapter::~CodesysAdapter()
 
 void CodesysAdapter::startApplications() const
 {
-	std::cout << "CodesysAdapter::startApplications" << " type: " << type << " name: " << name << std::endl;
+    std::cout << "CodesysAdapter::startApplications"
+              << " type: " << type << " name: " << name << std::endl;
 }
 
 void CodesysAdapter::stopApplications() const
 {
+    std::cout << "CodesysAdapter::stopApplications"
+              << " type: " << type << " name: " << name << std::endl;
 }
 
 std::string CodesysAdapter::getRuntimeVersion() const
