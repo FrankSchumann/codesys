@@ -16,18 +16,6 @@ CodesysAdapter::~CodesysAdapter()
 {
 }
 
-
-void CodesysAdapter::subscribe()
-{
-    auto const runtimeAdapterTmp = componentController->get( "RuntimeAdapter", "Mickey Mouse" );
-    auto const selfCodesysAdapterTmp = componentController->get( "CodesysAdapter", "Goofy" );
-
-    auto const runtimeAdapter = std::reinterpret_pointer_cast< RuntimeAdapterIf >( runtimeAdapterTmp );
-    auto const myself = std::reinterpret_pointer_cast< RuntimeIf >( selfCodesysAdapterTmp );
-
-    runtimeAdapter->subscribe(name, myself);
-}
-
 void CodesysAdapter::startApplications()
 {
 }

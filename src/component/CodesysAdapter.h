@@ -13,7 +13,6 @@ class CodesysAdapter : public RuntimeIf
     CodesysAdapter( std::string const &_type, std::string const &_name, std::shared_ptr< COPA::ComponentControllerIf > _componentController );
     ~CodesysAdapter();
 
-    virtual void subscribe() override;
     virtual void startApplications() override;
     virtual void stopApplications() override;
     virtual std::string getRuntimeVersion() override;
