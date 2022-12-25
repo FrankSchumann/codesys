@@ -10,8 +10,7 @@ CodesysFactory::CodesysFactory() : CodesysFactory( std::make_shared< COPA::Compo
 {
 }
 
-CodesysFactory::CodesysFactory( std::shared_ptr< COPA::ComponentControllerIf > _componentController )
-    : type( "CodesysAdapter" ), componentController( _componentController )
+CodesysFactory::CodesysFactory( std::shared_ptr< COPA::ComponentControllerIf > _componentController ) : componentController( _componentController )
 {
 }
 
