@@ -5,6 +5,7 @@
 
 #include "../component/CodesysAdapter.h"
 #include "copa-pdk/component/ComponentController.h"
+#include "runtime-sdk/RuntimeControllerIf.h"
 
 CodesysFactory::CodesysFactory() : CodesysFactory( std::make_shared< COPA::ComponentController >() )
 {
@@ -24,10 +25,10 @@ std::shared_ptr< COPA::ComponentIf > CodesysFactory::create( std::string const &
 
     std::shared_ptr< RuntimeIf > codesysAdapter = std::make_shared< CodesysAdapter >( type, name );
 
-    auto const runtimeAdapterTmp = componentController->get( "RuntimeAdapter", "Mickey Mouse" );
-    auto const runtimeAdapter = std::reinterpret_pointer_cast< RuntimeAdapterIf >( runtimeAdapterTmp );
+    auto const runtimeControllerTmp = componentController->get( "RuntimeController", "Mickey Mouse" );
+    auto const runtimeController = std::reinterpret_pointer_cast< RuntimeControllerIf >( runtimeControllerTmp );
 
-    runtimeAdapter->subscribe( name, codesysAdapter );
+    runtimeController->subscribe( name, codesysAdapter );
 
     return codesysAdapter;
 }
