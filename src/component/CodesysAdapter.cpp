@@ -13,10 +13,6 @@ CodesysAdapter::CodesysAdapter( std::string const &_type, std::string const &_na
     semaphore = semaphoreFactory->create();
 }
 
-CodesysAdapter::~CodesysAdapter()
-{
-}
-
 void CodesysAdapter::startApplications() const
 {
     std::cout << "CodesysAdapter::startApplications"

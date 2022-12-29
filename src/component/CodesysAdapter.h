@@ -10,7 +10,6 @@ class CodesysAdapter : public RuntimeIf
    public:
     CodesysAdapter( std::string const &_type, std::string const &_name );
     CodesysAdapter( std::string const &_type, std::string const &_name, std::shared_ptr< COPA::SemaphoreFactoryIf > semaphoreFactory );
-    ~CodesysAdapter();
 
     virtual void startApplications() const override;
     virtual void stopApplications() const override;
