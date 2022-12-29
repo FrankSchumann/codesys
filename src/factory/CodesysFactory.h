@@ -12,7 +12,6 @@ class CodesysFactory : public COPA::FactoryIf
    public:
     CodesysFactory();
     CodesysFactory( std::shared_ptr< COPA::ComponentControllerIf > _componentController );
-    virtual ~CodesysFactory();
 
     virtual std::shared_ptr< COPA::ComponentIf > create( std::string const &name ) const override;
     virtual std::string getType() const override;

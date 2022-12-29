@@ -15,10 +15,6 @@ CodesysFactory::CodesysFactory( std::shared_ptr< COPA::ComponentControllerIf > _
 {
 }
 
-CodesysFactory::~CodesysFactory()
-{
-}
-
 std::shared_ptr< COPA::ComponentIf > CodesysFactory::create( std::string const &name ) const
 {
     std::cout << "CodesysFactory::create" << std::endl;
