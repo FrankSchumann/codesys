@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.14)
 
 # Set some basic project attributes
 project (Codesys
@@ -6,7 +6,7 @@ project (Codesys
 		DESCRIPTION "CODESYS plugin")
 		
 set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+set(CMAKE_CXX_STANDARD 17)
 
 file(GLOB SOURCES "src/Plugin.cpp" "src/*/*.cpp")
 
