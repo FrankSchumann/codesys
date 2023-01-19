@@ -33,3 +33,10 @@ std::string CodesysFactory::getType() const
 {
     return type;
 }
+
+std::vector< std::string > CodesysFactory::getDependencies() const
+{
+    std::vector< std::string > result{ "RuntimeController" };
+
+    return result;
+}
