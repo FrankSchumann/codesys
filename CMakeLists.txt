@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.14)
 
 # Set some basic project attributes
-project (Codesys
-		VERSION 0.0.0.7
+project (codesys
+		VERSION 0.0.0.8
 		DESCRIPTION "CODESYS plugin")
 		
 set(CMAKE_BUILD_TYPE Debug)
@@ -17,7 +17,7 @@ add_library(${PROJECT_NAME} SHARED ${SOURCES})
 # Create a simple configuration header
 configure_file(config.h.in config.h)
 
-target_include_directories(Codesys PUBLIC ${PROJECT_BINARY_DIR} include ${osal_INCLUDE_DIR})
+target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_BINARY_DIR} include ${osal_INCLUDE_DIR})
 
 message("CMAKE_PROJECT_VERSION = ${CMAKE_PROJECT_VERSION}")
 
