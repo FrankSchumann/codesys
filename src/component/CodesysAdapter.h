@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include <semaphore/SemaphoreFactory.h>
+#include <osal/semaphore/SemaphoreFactory.h>
 #include "runtime-sdk/RuntimeIf.h"
 
 class CodesysAdapter : public RuntimeIf
