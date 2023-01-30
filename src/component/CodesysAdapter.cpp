@@ -3,11 +3,11 @@
 #include <iostream>
 
 CodesysAdapter::CodesysAdapter( std::string const &_type, std::string const &_name )
-    : CodesysAdapter( _type, _name, std::make_shared< COPA::SemaphoreFactory >() )
+    : CodesysAdapter( _type, _name, std::make_shared< osal::SemaphoreFactory >() )
 {
 }
 
-CodesysAdapter::CodesysAdapter( std::string const &_type, std::string const &_name, std::shared_ptr< COPA::SemaphoreFactoryIf > semaphoreFactory )
+CodesysAdapter::CodesysAdapter( std::string const &_type, std::string const &_name, std::shared_ptr< osal::SemaphoreFactoryIf > semaphoreFactory )
     : type( _type ), name( _name )
 {
     semaphore = semaphoreFactory->create();

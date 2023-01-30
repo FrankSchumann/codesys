@@ -2,14 +2,14 @@
 
 #include <memory>
 
-#include "copa-pdk/osal/semaphore/SemaphoreFactory.h"
+#include <semaphore/SemaphoreFactory.h>
 #include "runtime-sdk/RuntimeIf.h"
 
 class CodesysAdapter : public RuntimeIf
 {
    public:
     CodesysAdapter( std::string const &_type, std::string const &_name );
-    CodesysAdapter( std::string const &_type, std::string const &_name, std::shared_ptr< COPA::SemaphoreFactoryIf > semaphoreFactory );
+    CodesysAdapter( std::string const &_type, std::string const &_name, std::shared_ptr< osal::SemaphoreFactoryIf > semaphoreFactory );
 
     virtual void startApplications() const override;
     virtual void stopApplications() const override;
@@ -23,5 +23,5 @@ class CodesysAdapter : public RuntimeIf
     std::string type;
     std::string name;
 
-    std::shared_ptr< COPA::SemaphoreIf > semaphore;
+    std::shared_ptr< osal::SemaphoreIf > semaphore;
 };

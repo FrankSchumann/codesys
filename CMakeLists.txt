@@ -10,16 +10,18 @@ set(CMAKE_CXX_STANDARD 17)
 
 file(GLOB SOURCES "src/Plugin.cpp" "src/*/*.cpp")
 
+find_package(osal REQUIRED)
+
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
 # Create a simple configuration header
 configure_file(config.h.in config.h)
 
-include_directories("${PROJECT_BINARY_DIR}" include)
+target_include_directories(Codesys PUBLIC ${PROJECT_BINARY_DIR} include ${osal_INCLUDE_DIR})
 
 message("CMAKE_PROJECT_VERSION = ${CMAKE_PROJECT_VERSION}")
 
-set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${PROJECT_VERSION} ${osal_INCLUDE_DIR})
+set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${PROJECT_VERSION})
 
 IF(EXISTS "${WIND_CC_SYSROOT}/secureLoader/privatekey.pem")
 	IF(EXISTS "${WIND_CC_SYSROOT}/secureLoader/publiccert.pem")
