@@ -5,7 +5,7 @@
 
 #include "../component/CodesysAdapter.h"
 #include "copa-pdk/component/ComponentController.h"
-#include "runtime-sdk/RuntimeControllerIf.h"
+#include "runtime/RuntimeControllerIf.h"
 
 CodesysFactory::CodesysFactory() : CodesysFactory( std::make_shared< COPA::ComponentController >() )
 {
