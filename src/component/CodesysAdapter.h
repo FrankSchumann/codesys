@@ -3,7 +3,7 @@
 #include <memory>
 
 #include <osal/semaphore/SemaphoreFactory.h>
-#include "runtime/RuntimeIf.h"
+#include <runtime/RuntimeIf.h>
 
 class CodesysAdapter : public RuntimeIf
 {
