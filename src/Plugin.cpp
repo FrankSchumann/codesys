@@ -2,8 +2,8 @@
 #include <memory>
 
 #include "config.h"
-#include "copa-pdk/factory/FactoryController.h"
-#include "copa-pdk/component/ComponentController.h"
+#include "factory/FactoryController.h"
+#include "component/ComponentController.h"
 #include "factory/CodesysFactory.h"
 
 extern "C" void subscribePlugin()

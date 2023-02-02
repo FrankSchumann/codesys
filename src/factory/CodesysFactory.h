@@ -3,9 +3,9 @@
 #include <memory>
 #include <string>
 
-#include "copa-pdk/component/ComponentControllerIf.h"
-#include "copa-pdk/component/ComponentIf.h"
-#include "copa-pdk/factory/FactoryIf.h"
+#include "component/ComponentControllerIf.h"
+#include "component/ComponentIf.h"
+#include "factory/FactoryIf.h"
 
 class CodesysFactory : public COPA::FactoryIf
 {
