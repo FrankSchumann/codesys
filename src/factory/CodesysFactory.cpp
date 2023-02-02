@@ -4,7 +4,7 @@
 #include <memory>
 
 #include "../component/CodesysAdapter.h"
-#include <component/ComponentController.h>
+#include <copa/component/ComponentController.h>
 #include <runtime/RuntimeControllerIf.h>
 
 CodesysFactory::CodesysFactory() : CodesysFactory( std::make_shared< COPA::ComponentController >() )

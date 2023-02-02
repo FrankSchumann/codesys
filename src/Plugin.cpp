@@ -2,8 +2,8 @@
 #include <memory>
 
 #include "config.h"
-#include <factory/FactoryController.h>
-#include <component/ComponentController.h>
+#include <copa/factory/FactoryController.h>
+#include <copa/component/ComponentController.h>
 #include "factory/CodesysFactory.h"
 
 extern "C" void subscribePlugin()
