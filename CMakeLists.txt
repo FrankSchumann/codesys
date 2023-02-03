@@ -1,29 +1,28 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required( VERSION 3.15 )
 
 # Set some basic project attributes
-project (codesys
+project( codesys
 		VERSION 0.0.0.9
-		DESCRIPTION "CODESYS plugin")
-		
-set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_STANDARD 17)
+		DESCRIPTION "CODESYS plugin" )
 
-file(GLOB SOURCES "src/Plugin.cpp" "src/*/*.cpp")
+set( CMAKE_CXX_STANDARD 17 )
 
-find_package(copa CONFIG REQUIRED)
-find_package(osal CONFIG REQUIRED)
-find_package(runtime CONFIG REQUIRED)
+file( GLOB_RECURSE PROJECT_SOURCE_FILES src/*.cpp )
 
-add_library(${PROJECT_NAME} SHARED ${SOURCES})
+find_package( copa CONFIG REQUIRED )
+find_package( osal CONFIG REQUIRED )
+find_package( runtime CONFIG REQUIRED )
+
+add_library( ${PROJECT_NAME} SHARED ${PROJECT_SOURCE_FILES} )
 
 # Create a simple configuration header
-configure_file(config.h.in config.h)
+configure_file( config.h.in config.h )
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_BINARY_DIR} ${copa_INCLUDE_DIR} ${osal_INCLUDE_DIR} ${runtime_INCLUDE_DIR})
+include_directories( ${PROJECT_BINARY_DIR} ${copa_INCLUDE_DIR} ${osal_INCLUDE_DIR} ${runtime_INCLUDE_DIR} )
 
-message("CMAKE_PROJECT_VERSION = ${CMAKE_PROJECT_VERSION}")
+message( "CMAKE_PROJECT_VERSION = ${CMAKE_PROJECT_VERSION}" )
 
-set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${PROJECT_VERSION})
+set_target_properties( ${PROJECT_NAME} PROPERTIES VERSION ${PROJECT_VERSION} )
 
 IF(EXISTS "${WIND_CC_SYSROOT}/secureLoader/privatekey.pem")
 	IF(EXISTS "${WIND_CC_SYSROOT}/secureLoader/publiccert.pem")

@@ -1,5 +1,5 @@
 [requires]
-copa/[~0.0.2]
+copa/[~0.0.0]
 osal/0.0.2
 runtime/0.0.4
 
