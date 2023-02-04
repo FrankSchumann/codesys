@@ -18,8 +18,6 @@ FetchContent_MakeAvailable( googletest )
 
 enable_testing()
 
-include_directories( "../include" "../src" )
-
 file( GLOB_RECURSE PROJECT_SOURCE_FILES src/*.cpp dummy/*.cpp ../src/*.cpp )
 
 find_package( copa CONFIG REQUIRED ) 
