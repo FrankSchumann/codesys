@@ -1,6 +1,6 @@
-#include "copa/component/ComponentController.h"
+#include <copa/component/ComponentController.h>
 
-#include "copa/factory/FactoryController.h"
+#include <copa/factory/FactoryController.h>
 
 namespace COPA
 {

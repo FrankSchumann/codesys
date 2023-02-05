@@ -1,6 +1,6 @@
 #pragma once
 
-#include "osal/semaphore/SemaphoreIf.h"
+#include <osal/semaphore/SemaphoreIf.h>
 
 namespace osal
 {

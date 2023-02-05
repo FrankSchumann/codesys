@@ -1,4 +1,4 @@
-#include "copa/factory/FactoryController.h"
+#include <copa/factory/FactoryController.h>
 
 namespace COPA
 {

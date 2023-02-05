@@ -1,4 +1,4 @@
-#include "osal/semaphore/SemaphoreFactory.h"
+#include <osal/semaphore/SemaphoreFactory.h>
 
 #include "Semaphore.h"
 
