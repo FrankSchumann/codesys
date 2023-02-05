@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
 
 #include "factory/CodesysFactory.h"
-#include <runtime/mock/component/RuntimeController.h>
 #include <copa/mock/component/ComponentController.h>
+#include <runtime/mock/component/RuntimeController.h>
 
 TEST( CodesysFactoryTest, Failed )
 {
