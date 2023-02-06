@@ -1,5 +1,61 @@
 # codesys
 
+# Conan package manager
+
+## Install
+Install conan packages and create files for building.
+Must be done before Build
+
+### Release
+```bash
+codesys $ conan install . --output-folder=build
+```
+
+### Debug
+```bash
+codesys $ conan install . --output-folder=build -s build_type=Debug
+```
+
+# CMake
+Change directory to build.
+
+```bash
+codesys $ cd build
+```
+
+## Release
+```bash
+codesys $ cmake .. --preset release
+```
+
+## Debug
+```bash
+codesys $ cmake .. --preset debug
+```
+
+# Build
+
+```bash
+codesys $ cmake --build . -- -j4
+```
+
+# Test
+Build and execute GoogleTest.
+
+```bash
+codesys/build/test $ conan install . --output-folder=build
+```
+```bash
+codesys/build/test $ cd build
+codesys/build/test $ cmake .. --preset=release
+```
+```bash
+codesys/build/test $ cmake --build . -- -j4
+```
+```bash
+codesys/build/test $ ./codesysTest
+```
+
 # Import Projects
 
 ## Eclipse CDT
@@ -14,25 +70,9 @@ Import the projects to the Wind River Workbench based on CMake as follows:
 - revert changes to .gitignore
 - revert changes to CMakeLists.txt
 
-# Conan package manager
-
-## Conan
-
-```bash
-osal-linux $ conan install . --output-folder=build 
-```
-
-## Build
-
-```bash
-osal-linux $ cd build
-osal-linux $ cmake .. -DCMAKE_PREFIX_PATH=$(pwd)
-osal-linux $ cmake --build . 
-```
-
-## Git
+# Git
 Delete all ignored/created files.
 
 ```bash
-osal-linux $ git clean -fxd
+codesys $ git clean -fxd
 ```
