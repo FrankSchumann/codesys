@@ -43,17 +43,17 @@ codesys $ cmake --build . -- -j4
 Build and execute GoogleTest.
 
 ```bash
-codesys/build/test $ conan install . --output-folder=build
+codesys/test $ conan install . --output-folder=build
 ```
 ```bash
-codesys/build/test $ cd build
-codesys/build/test $ cmake .. --preset=release
+codesys/test $ cd build
+codesys/test/build $ cmake .. --preset=release
 ```
 ```bash
-codesys/build/test $ cmake --build . -- -j4
+codesys/test/build $ cmake --build . -- -j4
 ```
 ```bash
-codesys/build/test $ ./codesysTest
+codesys/test/build $ ./codesysTest
 ```
 
 # Import Projects
