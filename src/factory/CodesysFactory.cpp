@@ -4,18 +4,18 @@
 #include <memory>
 
 #include "../component/CodesysAdapter.h"
-#include <copa/component/ComponentController.h>
+#include <core/component/ComponentController.h>
 #include <runtime/RuntimeControllerIf.h>
 
-CodesysFactory::CodesysFactory() : CodesysFactory( std::make_shared< COPA::ComponentController >() )
+CodesysFactory::CodesysFactory() : CodesysFactory( std::make_shared< core::ComponentController >() )
 {
 }
 
-CodesysFactory::CodesysFactory( std::shared_ptr< COPA::ComponentControllerIf > _componentController ) : componentController( _componentController )
+CodesysFactory::CodesysFactory( std::shared_ptr< core::ComponentControllerIf > _componentController ) : componentController( _componentController )
 {
 }
 
-std::shared_ptr< COPA::ComponentIf > CodesysFactory::create( std::string const &name ) const
+std::shared_ptr< core::ComponentIf > CodesysFactory::create( std::string const &name ) const
 {
     std::cout << "CodesysFactory::create" << std::endl;
 

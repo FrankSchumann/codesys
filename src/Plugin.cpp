@@ -2,17 +2,17 @@
 #include <memory>
 
 #include "config.h"
-#include <copa/factory/FactoryController.h>
-#include <copa/component/ComponentController.h>
+#include <core/factory/FactoryController.h>
+#include <core/component/ComponentController.h>
 #include "factory/CodesysFactory.h"
 
 extern "C" void subscribePlugin()
 {
     std::cout << "codesys - subscribePlugin" << std::endl;
 
-    std::shared_ptr< COPA::FactoryController > factoryController = std::make_shared< COPA::FactoryController >();
+    std::shared_ptr< core::FactoryController > factoryController = std::make_shared< core::FactoryController >();
 
-    std::shared_ptr< COPA::FactoryIf > codesysFactory = std::make_shared< CodesysFactory >();
+    std::shared_ptr< core::FactoryIf > codesysFactory = std::make_shared< CodesysFactory >();
 
     factoryController->subscribe( codesysFactory );
 
@@ -23,11 +23,11 @@ extern "C" void unsubscribePlugin()
 {
     std::cout << "codesys - unsubscribePlugin" << std::endl;
 
-    std::shared_ptr< COPA::ComponentController > componentController = std::make_shared< COPA::ComponentController >();
+    std::shared_ptr< core::ComponentController > componentController = std::make_shared< core::ComponentController >();
 
-    std::shared_ptr< COPA::FactoryController > factoryController = std::make_shared< COPA::FactoryController >();
+    std::shared_ptr< core::FactoryController > factoryController = std::make_shared< core::FactoryController >();
 
-    std::shared_ptr< COPA::FactoryIf > codesysFactory = std::make_shared< CodesysFactory >();
+    std::shared_ptr< core::FactoryIf > codesysFactory = std::make_shared< CodesysFactory >();
 
     auto const type = codesysFactory->getType();
     componentController->erase( type );

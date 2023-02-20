@@ -2,7 +2,7 @@ cmake_minimum_required( VERSION 3.15 )
 
 # Set some basic project attributes
 project( codesys
-		VERSION 0.0.0.9
+		VERSION 0.0.0.10
 		DESCRIPTION "CODESYS plugin" )
 
 set( CMAKE_CXX_STANDARD 17 )
@@ -10,6 +10,7 @@ set( CMAKE_CXX_STANDARD 17 )
 file( GLOB_RECURSE PROJECT_SOURCE_FILES src/*.cpp )
 
 find_package( copa CONFIG REQUIRED )
+find_package( core CONFIG REQUIRED )
 find_package( osal CONFIG REQUIRED )
 find_package( runtime CONFIG REQUIRED )
 
@@ -18,7 +19,7 @@ add_library( ${PROJECT_NAME} SHARED ${PROJECT_SOURCE_FILES} )
 # Create a simple configuration header
 configure_file( config.h.in config.h )
 
-include_directories( ${PROJECT_BINARY_DIR} ${copa_INCLUDE_DIR} ${osal_INCLUDE_DIR} ${runtime_INCLUDE_DIR} )
+include_directories( ${PROJECT_BINARY_DIR} ${copa_INCLUDE_DIR} ${core_INCLUDE_DIR} ${osal_INCLUDE_DIR} ${runtime_INCLUDE_DIR} )
 
 message( "CMAKE_PROJECT_VERSION = ${CMAKE_PROJECT_VERSION}" )
 
