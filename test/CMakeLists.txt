@@ -18,7 +18,8 @@ FetchContent_MakeAvailable( googletest )
 
 enable_testing()
 
-file( GLOB_RECURSE PROJECT_SOURCE_FILES src/*.cpp dummy/copa/*.cpp ../src/*.cpp )
+#file( GLOB_RECURSE PROJECT_SOURCE_FILES src/*.cpp dummy/copa/*.cpp ../src/*.cpp )
+file( GLOB_RECURSE PROJECT_SOURCE_FILES src/*.cpp ../src/*.cpp )
  
 find_package( core CONFIG REQUIRED ) 
 find_package( osal CONFIG REQUIRED )
