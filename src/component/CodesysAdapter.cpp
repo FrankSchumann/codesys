@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+std::string const CodesysAdapter::type4 = std::string("bla");
+
 CodesysAdapter::CodesysAdapter( std::string const &_type, std::string const &_name )
     : CodesysAdapter( _type, _name, std::make_shared< osal::SemaphoreFactory >() )
 {

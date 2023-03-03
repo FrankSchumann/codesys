@@ -20,6 +20,7 @@ class CodesysAdapter : public RuntimeIf
     virtual std::string getVersion() const override;
 
     const std::string type3 = std::string( "CodesysAdapter" );
+    static std::string const type4;
 
    private:
     std::string type;
