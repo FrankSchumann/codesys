@@ -30,6 +30,18 @@ extern "C" void unsubscribePlugin()
     auto codesysFactory = std::make_shared< CodesysFactory >();
 
     auto const type = codesysFactory->getType();
+
+    std::cout << "codesysComponents" << std::endl;
+    std::cout << "type " << type << std::endl;
+    auto codesysComponents = componentController->get( type );
+    std::cout << "codesysComponents2" << std::endl;
+
+    for (auto const& [name, component] : codesysComponents)
+    {
+        std::cout << name << std::endl;
+        codesysFactory->cleanup( name );
+    }
+
     componentController->erase( type );
 
     factoryController->unsubscribe( type );

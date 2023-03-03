@@ -17,6 +17,8 @@ class CodesysFactory : public core::FactoryIf
     virtual std::string getType() const override;
     virtual std::vector<std::string> getDependencies() const override;
 
+    void cleanup( std::string const &name );
+
    private:
     const std::string type = std::string( "CodesysAdapter" );
 
