@@ -20,7 +20,5 @@ class CodesysFactory : public core::FactoryIf
     void cleanup( std::string const &name );
 
    private:
-    const std::string type = std::string( "CodesysAdapter" );
-
     std::shared_ptr< core::ComponentControllerIf > componentController;
 };

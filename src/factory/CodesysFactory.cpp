@@ -19,9 +19,7 @@ std::shared_ptr< core::ComponentIf > CodesysFactory::create( std::string const &
 {
     std::cout << "CodesysFactory::create" << std::endl;
 
-    std::shared_ptr< RuntimeIf > codesysAdapter = std::make_shared< CodesysAdapter >( type, name );
-
-    std::string tmp = CodesysAdapter::type4;
+    std::shared_ptr< RuntimeIf > codesysAdapter = std::make_shared< CodesysAdapter >( name );
 
     auto const runtimeControllerTmp = componentController->get( "RuntimeController", "Mickey Mouse" );
     auto const runtimeController = std::reinterpret_pointer_cast< RuntimeControllerIf >( runtimeControllerTmp );
@@ -43,7 +41,7 @@ void CodesysFactory::cleanup( std::string const &name )
 
 std::string CodesysFactory::getType() const
 {
-    return type;
+    return CodesysAdapter::type;
 }
 
 std::vector< std::string > CodesysFactory::getDependencies() const

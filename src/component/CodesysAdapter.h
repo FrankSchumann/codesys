@@ -8,8 +8,8 @@
 class CodesysAdapter : public RuntimeIf
 {
    public:
-    CodesysAdapter( std::string const &_type, std::string const &_name );
-    CodesysAdapter( std::string const &_type, std::string const &_name, std::shared_ptr< osal::SemaphoreFactoryIf > semaphoreFactory );
+    CodesysAdapter( std::string const &_name );
+    CodesysAdapter( std::string const &_name, std::shared_ptr< osal::SemaphoreFactoryIf > semaphoreFactory );
 
     virtual void startApplications() const override;
     virtual void stopApplications() const override;
@@ -19,11 +19,9 @@ class CodesysAdapter : public RuntimeIf
     virtual std::string getName() const override;
     virtual std::string getVersion() const override;
 
-    const std::string type3 = std::string( "CodesysAdapter" );
-    static std::string const type4;
+    static std::string const type;
 
    private:
-    std::string type;
     std::string name;
 
     std::shared_ptr< osal::SemaphoreIf > semaphore;
