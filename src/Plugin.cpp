@@ -31,16 +31,16 @@ extern "C" void unsubscribePlugin()
 
     auto const type = codesysFactory->getType();
 
-    std::cout << "codesysComponents" << std::endl;
-    std::cout << "type " << type << std::endl;
-    auto codesysComponents = componentController->get( type );
-    std::cout << "codesysComponents2" << std::endl;
+    // std::cout << "codesysComponents" << std::endl;
+    // std::cout << "type " << type << std::endl;
+    // auto codesysComponents = componentController->get( type );
+    // std::cout << "codesysComponents2" << std::endl;
 
-    for (auto const& [name, component] : codesysComponents)
-    {
-        std::cout << name << std::endl;
-        codesysFactory->cleanup( name );
-    }
+    // for (auto const& [name, component] : codesysComponents)
+    // {
+    //     std::cout << name << std::endl;
+    //     codesysFactory->cleanup( name );
+    // }
 
     componentController->erase( type );
 

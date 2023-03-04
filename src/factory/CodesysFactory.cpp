@@ -29,7 +29,7 @@ std::shared_ptr< core::ComponentIf > CodesysFactory::create( std::string const &
     return codesysAdapter;
 }
 
-void CodesysFactory::cleanup( std::string const &name )
+void CodesysFactory::cleanup( std::string const &name ) const
 {
     std::cout << "CodesysFactory::delete" << std::endl;
 
