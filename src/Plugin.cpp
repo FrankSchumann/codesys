@@ -1,9 +1,10 @@
+#include <core/component/ComponentController.h>
+#include <core/factory/FactoryController.h>
+
 #include <iostream>
 #include <memory>
 
 #include "config.h"
-#include <core/factory/FactoryController.h>
-#include <core/component/ComponentController.h>
 #include "factory/CodesysFactory.h"
 
 extern "C" void subscribePlugin()
@@ -31,22 +32,9 @@ extern "C" void unsubscribePlugin()
 
     auto const type = codesysFactory->getType();
 
-    // std::cout << "codesysComponents" << std::endl;
-    // std::cout << "type " << type << std::endl;
-    // auto codesysComponents = componentController->get( type );
-    // std::cout << "codesysComponents2" << std::endl;
-
-    // for (auto const& [name, component] : codesysComponents)
-    // {
-    //     std::cout << name << std::endl;
-    //     codesysFactory->cleanup( name );
-    // }
-
     componentController->erase( type );
 
     factoryController->unsubscribe( type );
-
-    std::cout << "codesys - unsubscribePlugin finished" << std::endl;
 }
 
 extern "C" const char* getName()

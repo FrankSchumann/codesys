@@ -2,15 +2,13 @@
 
 #include <iostream>
 
-std::string const CodesysAdapter::type = std::string("CodesysAdapter");
+std::string const CodesysAdapter::type = std::string( "CodesysAdapter" );
 
-CodesysAdapter::CodesysAdapter( std::string const &_name )
-    : CodesysAdapter( _name, std::make_shared< osal::SemaphoreFactory >() )
+CodesysAdapter::CodesysAdapter( std::string const &_name ) : CodesysAdapter( _name, std::make_shared< osal::SemaphoreFactory >() )
 {
 }
 
-CodesysAdapter::CodesysAdapter( std::string const &_name, std::shared_ptr< osal::SemaphoreFactoryIf > semaphoreFactory )
-    : name( _name )
+CodesysAdapter::CodesysAdapter( std::string const &_name, std::shared_ptr< osal::SemaphoreFactoryIf > semaphoreFactory ) : name( _name )
 {
     semaphore = semaphoreFactory->create();
 }

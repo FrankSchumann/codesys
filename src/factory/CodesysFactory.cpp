@@ -1,11 +1,12 @@
 #include "CodesysFactory.h"
 
+#include <core/component/ComponentController.h>
+#include <runtime/RuntimeControllerIf.h>
+
 #include <iostream>
 #include <memory>
 
 #include "../component/CodesysAdapter.h"
-#include <core/component/ComponentController.h>
-#include <runtime/RuntimeControllerIf.h>
 
 CodesysFactory::CodesysFactory() : CodesysFactory( std::make_shared< core::ComponentController >() )
 {
@@ -31,7 +32,7 @@ std::shared_ptr< core::ComponentIf > CodesysFactory::create( std::string const &
 
 void CodesysFactory::cleanup( std::string const &name ) const
 {
-    std::cout << "CodesysFactory::delete" << std::endl;
+    std::cout << "CodesysFactory::cleanup" << std::endl;
 
     auto const runtimeControllerTmp = componentController->get( "RuntimeController", "Mickey Mouse" );
     auto const runtimeController = std::reinterpret_pointer_cast< RuntimeControllerIf >( runtimeControllerTmp );

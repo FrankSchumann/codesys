@@ -1,12 +1,12 @@
+#include <core/mock/component/ComponentController.h>
 #include <gtest/gtest.h>
+#include <runtime/mock/component/RuntimeController.h>
 
 #include "factory/CodesysFactory.h"
-#include <core/mock/component/ComponentController.h>
-#include <runtime/mock/component/RuntimeController.h>
 
 TEST( CodesysFactoryTest, Failed )
 {
-	GTEST_FAIL();
+    GTEST_FAIL();
 }
 
 TEST( CodesysFactoryTest, create )
