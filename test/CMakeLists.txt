@@ -18,13 +18,13 @@ FetchContent_MakeAvailable( googletest )
 
 enable_testing()
 
-file( GLOB_RECURSE PROJECT_SOURCE_FILES src/*.cpp dummy/*.cpp ../src/*.cpp )
-
-find_package( copa CONFIG REQUIRED ) 
+file( GLOB_RECURSE PROJECT_SOURCE_FILES src/*.cpp ../src/*.cpp )
+ 
+find_package( core CONFIG REQUIRED ) 
 find_package( osal CONFIG REQUIRED )
 find_package( runtime CONFIG REQUIRED )
 
-include_directories( ${PROJECT_BINARY_DIR} ../src ${copa_INCLUDE_DIR} ${osal_INCLUDE_DIR} ${runtime_INCLUDE_DIR} )
+include_directories( ${PROJECT_BINARY_DIR} ../src ${core_INCLUDE_DIR} ${osal_INCLUDE_DIR} ${runtime_INCLUDE_DIR} )
 
 add_executable( ${CMAKE_PROJECT_NAME}  ${PROJECT_SOURCE_FILES} )
 
@@ -33,6 +33,8 @@ configure_file( ../config.h.in config.h )
 
 target_link_libraries(
   ${CMAKE_PROJECT_NAME}
+  core::core
+  osal::osal
   GTest::gmock_main
   GTest::gtest_main
 )

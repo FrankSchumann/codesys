@@ -1,12 +1,12 @@
+#include <core/mock/component/ComponentController.h>
 #include <gtest/gtest.h>
+#include <runtime/mock/component/RuntimeController.h>
 
 #include "factory/CodesysFactory.h"
-#include <copa/mock/component/ComponentController.h>
-#include <runtime/mock/component/RuntimeController.h>
 
 TEST( CodesysFactoryTest, Failed )
 {
-	GTEST_FAIL();
+    GTEST_FAIL();
 }
 
 TEST( CodesysFactoryTest, create )
@@ -15,7 +15,7 @@ TEST( CodesysFactoryTest, create )
     auto runtimeController = std::make_shared< mock::RuntimeController >();
 
     EXPECT_CALL( *componentController, get( testing::_, testing::_ ) ).WillOnce( testing::Return( runtimeController ) );
-    EXPECT_CALL( *runtimeController, subscribe( testing::_, testing::_ ) ).Times( testing::Exactly( 1 ) );
+    EXPECT_CALL( *runtimeController, subscribe( testing::_ ) ).Times( testing::Exactly( 1 ) );
 
     CodesysFactory codesysFactory = CodesysFactory( componentController );
 

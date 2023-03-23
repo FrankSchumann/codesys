@@ -27,6 +27,11 @@ codesys $ cd build
 ```bash
 codesys $ cmake .. --preset release
 ```
+or
+```bash
+codesys $ cmake .. --preset conan-release
+```
+
 
 ## Debug
 ```bash
